@@ -12,7 +12,7 @@ import java.util.List;
 public class GamerService {
     @Autowired
    private GamerRepository gamerRepository;
-    
+
    public List<GamerMin> findAll(){
      var resul =gamerRepository.findAll();
      List<GamerMin>dto= resul.stream().map(x-> new GamerMin(x)).toList();
