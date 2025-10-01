@@ -1,6 +1,7 @@
 package com.kelly.dslist.DTO;
 
 import com.kelly.dslist.entities.Game;
+import com.kelly.dslist.repository.GameMinProjection;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,5 +24,12 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+    public GameMinDTO(GameMinProjection projection ) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getyear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getshortDescription();
     }
 }
